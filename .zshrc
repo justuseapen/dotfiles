@@ -134,5 +134,8 @@ if [ -f '/Users/justus/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/jus
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/justus/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/justus/google-cloud-sdk/completion.zsh.inc'; fi
 
+# Deletes all branches in a project except master
+alias gbc="git branch | grep -v \"master\" | xargs git branch -D && git branch"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
