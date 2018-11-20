@@ -137,5 +137,20 @@ if [ -f '/Users/justus/google-cloud-sdk/completion.zsh.inc' ]; then source '/Use
 # Deletes all branches in a project except master
 alias gbc="git branch | grep -v \"master\" | xargs git branch -D && git branch"
 
+# ngroks justuseapen.ngrok
+alias ngje="ngrok authtoken 5NTShfip5aX8fAcSpL7rW_7Mc6LGBgZCKNifGjRnhFF"
+
+# ngroks smartlogicwaterbot.ngrok
+alias ngsl="ngrok authtoken 5y2EJMcgYwRTpVNKGMqqs_78rhfb3WFvNbZbv9pM2cy"
+
+# opens foxleigh
+alias foxleigh='open http://foxleigh.foxleigh.localhost:3000'
+
+# Mysql stuff
+MYSQL=/usr/local/mysql/bin
+export PATH=$PATH:$MYSQL
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
