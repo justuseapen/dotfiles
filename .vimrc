@@ -32,6 +32,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
+Plugin 'joker1007/vim-ruby-heredoc-syntax'
 
 " Snipmate stuff
 Plugin 'MarcWeber/vim-addon-mw-utils'
