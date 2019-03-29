@@ -28,11 +28,12 @@ Plugin 'flowtype/vim-flow'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'tomlion/vim-solidity'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'joker1007/vim-ruby-heredoc-syntax'
+Plugin 'svermeulen/vim-easyclip'
 
 " Snipmate stuff
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -85,7 +86,14 @@ set autoindent
 "set statusline+=%F
 set wildmode=longest,list,full
 set wildmenu
-set clipboard=unnamed
+
+" Fixes tmux pane dependent clipboard
+set clipboard=unnamed,unnamedplus
+noremap ty "+y
+noremap tY "+Y
+noremap tp "+p
+noremap tP "+P
+
 set cursorline
 " Do case insensitive matching
 set ignorecase
@@ -131,6 +139,3 @@ endfun
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-if $TMUX == ''
-  set clipboard+=unnamed
-endif
