@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/justus/.oh-my-zsh
+export ZSH=/Users/justuseapen/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -52,6 +52,13 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+
+if type brew &>/dev/null; then
+	FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+	autoload -Uz compinit
+	compinit
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,10 +110,10 @@ alias vimrc="vim ~/dotfiles/.vimrc"
 alias tmuxconf="vim ~/dotfiles/.tmux.conf"
 
 # re-source all rc files
-alias resource="source ~/dotfiles/.zshrc"
+alias resource="source ~/dotfiles/.zshrc && tmux source ~/dotfiles/.tmux.conf && source ~/dotfiles/.vimrc"
 
 # Add Haskell Stack to path
-export PATH="$PATH:/Users/justus/.local/bin"
+export PATH="$PATH:/Users/justuseapen/.local/bin"
 
 # Include these for building android from source
 export ANDROID_SDK=/Users/your_unix_name/android-sdk-macosx
@@ -117,13 +124,13 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 
 # Add Android Debugging Bridge to the path
-export PATH="$PATH:/Users/justus/Library/Android/sdk"
+export PATH="$PATH:/Users/justuseapen/Library/Android/sdk"
 
 # export PATH="/usr/local/opt/qt@5.5/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 
-. /Users/justus/Documents/Code/torch/distro/install/bin/torch-activate
+. /Users/justuseapen/Documents/Code/torch/distro/install/bin/torch-activate
 
 # tensorflow
 alias tf="source ~/Documents/Code/tensorflow/bin/activate"
@@ -132,10 +139,10 @@ alias tf="source ~/Documents/Code/tensorflow/bin/activate"
 unsetopt nomatch
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/justus/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/justus/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/justuseapen/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/justuseapen/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/justus/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/justus/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/justuseapen/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/justuseapen/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Deletes all branches in a project except master
 alias gbc="git branch | grep -v \"master\" | xargs git branch -D && git branch"
@@ -144,7 +151,7 @@ alias gbc="git branch | grep -v \"master\" | xargs git branch -D && git branch"
 alias gph="git push origin HEAD"
 
 # aliases ngrok
-alias ngrok="/Users/justus/Downloads/ngrok"
+alias ngrok="/Users/justuseapen/Downloads/ngrok"
 
 # ngroks justuseapen.ngrok
 alias ngje="ngrok authtoken 5NTShfip5aX8fAcSpL7rW_7Mc6LGBgZCKNifGjRnhFF"
@@ -174,6 +181,4 @@ export PATH=$PATH:$MYSQL
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
+export PATH="/usr/local/sbin:$PATH"

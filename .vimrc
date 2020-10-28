@@ -80,8 +80,10 @@ filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set expandtab
-set swapfile
-set dir=~/tmp
+set updatecount=0
+set nobackup
+set nowritebackup
+set noswapfile
 set number
 set autoindent
 "set statusline+=%F
