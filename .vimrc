@@ -34,6 +34,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'joker1007/vim-ruby-heredoc-syntax'
 Plugin 'svermeulen/vim-easyclip'
+Plugin 'kien/ctrlp.vim'
 
 " Snipmate stuff
 Plugin 'MarcWeber/vim-addon-mw-utils'
